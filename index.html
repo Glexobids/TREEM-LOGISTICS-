@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GLEXOBIDS - Truck Rental Services</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+		/* styles */
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header-content">
+			<div class="logo-left">
+				<img src="assets/treem-logistics-logo.jpg" alt="TREEM LOGISTICS Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 20px;">
+			</div>
+			<div class="company-info">
+				<h1>GLEXOBIDS</h1>
+				<p>TREEM LOGISTICS</p>
+			</div>
+			<div class="logo-right">
+				<img src="assets/glexobids-logo.jpg" alt="GLEXOBIDS Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 20px;">
+			</div>
+		</div>
+	</header>
+	<nav id="nav"></nav>
+	<script>
+		fetch('nav.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('nav').innerHTML = data;
+			});
+	</script>
+	<div id="search"></div>
+	<script>
+		fetch('search.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('search').innerHTML = data;
+			});
+	</script>
+	<main>
+		<div id="trucks"></div>
+		<script>
+			fetch('trucks.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('trucks').innerHTML = data;
+				});
+		</script>
+		<div id="booking"></div>
+		<script>
+			fetch('booking.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('booking').innerHTML = data;
+				});
+		</script>
+		<!-- Medium Commercial Vehicles (MCVs) -->
+		<section>
+			<h2 class="highlight"><b>Medium Commercial Vehicles (MCVs)</b></h2>
+			<img src="assets/mcv.jpg" alt="MCV Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent MCVs for your transportation needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+		<!-- Heavy Commercial Vehicles (HCVs) -->
+		<section>
+			<h2 class="highlight"><b>Heavy Commercial Vehicles (HCVs)</b></h2>
+			<img src="assets/hcv.jpg" alt="HCV Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent HCVs for your heavy transportation needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+		<!-- Multi-Axle Vehicles (MAVs) -->
+		<section>
+			<h2 class="highlight"><b>Multi-Axle Vehicles (MAVs)</b></h2>
+			<img src="assets/mav.jpg" alt="MAV Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent MAVs for your long-distance transportation needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+		<!-- Tipper Trucks -->
+		<section>
+			<h2 class="highlight"><b>Tipper Trucks</b></h2>
+			<img src="assets/tipper-truck.jpg" alt="Tipper Truck Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent tipper trucks for your construction needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+		<!-- Refrigerated Trucks -->
+		<section>
+			<h2 class="highlight"><b>Refrigerated Trucks</b></h2>
+			<img src="assets/refrigerated-truck.jpg" alt="Refrigerated Truck Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent refrigerated trucks for your temperature-controlled transportation needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+		<!-- Tankers -->
+		<section>
+			<h2 class="highlight"><b>Tankers</b></h2>
+			<img src="assets/tanker.jpg" alt="Tanker Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+			<p>Rent tankers for your liquid transportation needs.</p>
+			<button>Search Nearest Truck & Book</button>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 GLEXOBIDS - All Rights Reserved</p>
+	</footer>
+	<script src="script.js"></script>
+	<script src="booking.js"></script>
+</body>
+</html>
+
+ • css code 
+
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header Styles */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.treem-logistics-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.glexobids-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* Dynamic Styles for Moving Fonts */
+
+.moving-font {
+  animation: move 2s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Highlighted Font Styles */
+
+.highlighted-font {
+  font-weight: bold;
+  color: #0069d9;
+  text-shadow: 2px 2px #007bff;
+  animation: highlight 2s infinite;
+}
+
+@keyframes highlight {
+  0% {
+    color: #0069d9;
+  }
+  50% {
+    color: #007bff;
+  }
+  100% {
+    color: #0069d9;
+  }
+}
+
+/* Section Column Styles */
+
+.section-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.section-column img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Section Heading Styles */
+
+.section-heading {
+  background: linear-gradient(to bottom, #ffd700, #007bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: move 2s infinite;
+}
+
+/* Truck Listings Styles */
+
+.truck-listings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.truck-listing {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.truck-listing img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Adjusted Logo Styles */
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .truck-listings {
+    flex-direction: column;
+  }
+  .truck-listing {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-column {
+    padding: 10px;
+  }
+  .truck-listing {
+    padding: 10px;
+  }
+}
+
+/* Filter and Sort Buttons Styles */
+
+.filter-buttons,
+.sort-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-button,
+.sort-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Booking Styles */
+
+#booking {
+  margin-top: 20px;
+}
+
+#booking form {
+  display: flex;
+  flex-direction: column;
+}
+
+#booking label {
+  margin-bottom: 10px;
+}
+
+#booking input,
+#booking select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#booking button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Golden and Blue Color Double Shade for Section Headings */
+
+.section-heading {
+  background: linear-gradient(to bottom, #ffd700, #007bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: move 2s infinite;
+}
+
+/* Box View Style for All Sections */
+
+.section-column {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Column Style for All Sections */
+
+.section-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+  .truck-listings {
+    flex-direction: column;
+  }
+  .truck-listing {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-column {
+    padding: 10px;
+  }
+  .truck-listing {
+    padding: 10px;
+  }
+}
+
+/* Final Touches */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+button {
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+Please combine both and rewrite html code fully functional
