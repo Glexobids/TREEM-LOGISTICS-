@@ -1,1 +1,18 @@
-
+<div id="booking">
+  <h2>Book a Truck</h2>
+  <form>
+    <label for="truck-type">Truck Type:</label>
+    <select id="truck-type">
+      <option value="mcv">MCV</option>
+      <option value="hcv">HCV</option>
+      <!-- Add more truck types here -->
+    </select>
+    <label for="rental-duration">Rental Duration:</label>
+    <input type="number" id="rental-duration" min="1" max="30">
+    <label for="pickup-date">Pickup Date:</label>
+    <input type="date" id="pickup-date">
+    <label for="return-date">Return Date:</label>
+    <input type="date" id="return-date">
+    <button>Book Now</button>
+  </form>
+</div>
