@@ -4,8 +4,11 @@
 	<title>TREEM Logistics</title>
 </head>
 <body>
-	<form action="treem-logistics.html#if" method="get">
-		<input type="submit" value="Open TREEM LOGISTICS">
-	</form>
+	<button id="open-button">Open TREEM LOGISTICS</button>
+	<script>
+		document.getElementById("open-button").onclick = function() {
+			window.open("treem-logistics.html#if", "_self");
+		};
+	</script>
 </body>
 </html>
