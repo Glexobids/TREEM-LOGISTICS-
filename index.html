@@ -244,14 +244,27 @@
                     document.getElementById('trucks').innerHTML = data;
                 });
         </script>
-        <div id="booking"></div>
-        <script>
-            fetch('booking.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('booking').innerHTML = data;
-                });
-        </script>
+        <div id="booking">
+  <h2>My Bookings</h2>
+  <ul>
+    <!-- Display bookings here -->
+  </ul>
+</div>
+<script src="bookings.js"></script>
+<script>
+  const bookingsList = document.getElementById('booking');
+  bookings.forEach((booking) => {
+    const bookingHTML = `
+      <li>
+        <h3>${booking.truckType}</h3>
+        <p>Rental Duration: ${booking.rentalDuration} days</p>
+        <p>Pickup Date: ${booking.pickupDate}</p>
+        <p>Return Date: ${booking.returnDate}</p>
+      </li>
+    `;
+    bookingsList.querySelector('ul').insertAdjacentHTML('beforeend', bookingHTML);
+  });
+</script>
         <!-- Medium Commercial Vehicles (MCVs) -->
         <section class="fade-in">
             <h2 class="section-heading"><b>Medium Commercial Vehicles (MCVs)</b></h2>
