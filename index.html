@@ -1,14 +1,320 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TREEM Logistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREEM LOGISTICS - Truck Rental Services</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            font-size: 18px;
+        }
+        /* Header Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+        }
+        .logo-left {
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .logo-left img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .company-info p {
+            font-size: 24px;
+            background: linear-gradient(to right, #032B44 50%, #1A1D23 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #4682b4;
+            color: #4682b4;
+        }
+        /* Responsive Logo Size */
+        @media only screen and (max-width: 768px) {
+            .logo-left img {
+                max-width: 100px;
+            }
+        }
+        /* Section Styles */
+        section {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            display: inline-block;
+        }
+        .section-heading {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            animation: colorful-move 5s infinite;
+        }
+        @keyframes colorful-move {
+            0% {
+                color: #FF69B4;
+            }
+            50% {
+                color: #33CC33;
+            }
+            100% {
+                color: #6666FF;
+            }
+        }
+        section img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 20px;
+            color: hsl(210, 50%, 70%);
+            margin-bottom: 20px;
+        }
+        section button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        section button:hover {
+            background-color: #0056b3;
+        }
+        /* Mobile Styles */
+        @media only screen and (max-width: 768px) {
+            section {
+                width: 90%;
+                margin: 20px auto;
+                padding: 10px;
+            }
+            img {
+                height: 150px;
+            }
+        }
+        /* Truck Listings Styles */
+        .truck-listings {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .truck-listing:hover {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .truck-listing img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .truck-listing h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .truck-listing p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        /* Booking Button Styles */
+        .booking-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .booking-button:hover {
+            background-color: #0056b3;
+        }
+        /* Responsive Styles */
+        @media only screen and (max-width: 480px) {
+            .truck-listing {
+                margin: 10px;
+                padding: 10px;
+            }
+            .truck-listing img {
+                height: 150px;
+            }
+            .section-heading {
+                font-size: 18px;
+            }
+        }
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+        }
+        /* Social Media Icons */
+        .social-media-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .social-media-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .social-media-icons a:hover {
+            color: #ccc;
+        }
+        /* Copyright Styles */
+        .copyright {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        /* Scroll-to-Top Button Styles */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        .scroll-to-top:hover {
+            background-color: #444;
+        }
+        /* Scroll-to-Top Button Animation */
+        .scroll-to-top.animate {
+            animation: fade-in 0.5s;
+        }
+    </style>
 </head>
 <body>
-	<button id="open-button">Open TREEM LOGISTICS</button>
-	<script>
-		document.getElementById("open-button").onclick = function() {
-			window.open("treem-logistics.html#if", "_self");
-		};
-	</script>
+    <header>
+        <div class="logo-left">
+            <img src="assets/treem-logistics-logo.png" alt="TREEM LOGISTICS Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 20px;">
+        </div>
+    </header>
+    <nav id="nav"></nav>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav').innerHTML = data;
+            });
+    </script>
+    <div id="search">
+        <input type="search" placeholder="Search...">
+        <button>Search</button>
+    </div>
+    <script>
+        fetch('search.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('search').innerHTML = data;
+            });
+    </script>
+    <main>
+        <div id="trucks"></div>
+        <script>
+            fetch('trucks.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('trucks').innerHTML = data;
+                });
+        </script>
+        <div id="booking">
+  <h2>My Bookings</h2>
+  <ul>
+    <!-- Display bookings here -->
+  </ul>
+</div>
+<script src="bookings.js"></script>
+<script>
+  const bookingsList = document.getElementById('booking');
+  bookings.forEach((booking) => {
+    const bookingHTML = `
+      <li>
+        <h3>${booking.truckType}</h3>
+        <p>Rental Duration: ${booking.rentalDuration} days</p>
+        <p>Pickup Date: ${booking.pickupDate}</p>
+        <p>Return Date: ${booking.returnDate}</p>
+      </li>
+    `;
+    bookingsList.querySelector('ul').insertAdjacentHTML('beforeend', bookingHTML);
+  });
+</script>
+        <!-- Medium Commercial Vehicles (MCVs) -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Medium Commercial Vehicles (MCVs)</b></h2>
+            <img src="assets/mcv.jpg" alt="MCV Image">
+            <p>Rent MCVs for your transportation needs.</p>
+            <button>Search Nearest Truck & Book</button>
+        </section>
+        <!-- Heavy Commercial Vehicles (HCVs) -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Heavy Commercial Vehicles (HCVs)</b></h2>
+            <img src="assets/hcv.jpg" alt="HCV Image">
+            <p>Rent HCVs for your heavy transportation needs.</p>
+            <button>Search Nearest Truck & Book</button>
+        </section>
+        <!-- Multi-Axle Vehicles (MAVs) -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Multi-Axle Vehicles (MAVs)</b></h2>
+            <img src="assets/mav.jpg" alt="MAV Image">
+            <p>Rent MAVs for your long-distance transportation needs.</p>
+            <button>Search Nearest Truck & Book</button>
+        </section>
+        <!-- Tipper Trucks -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Tipper Trucks</b></h2>
+            <img src="assets/tipper-truck.jpg" alt="Tipper Truck Image">
+            <p>Rent tipper trucks for your construction needs.</p>
+            <button>Search Nearest Truck & Book</button>
+</section>
+  <!-- Refrigerated Trucks -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Refrigerated Trucks</b></h2>
+            <img src="assets/refrigerated-truck.jpg" alt="Refrigerated Truck Image">
+            <p>Rent refrigerated trucks for your temperature-controlled transportation needs.</p>
+            <button>Search Nearest Truck & Book</button>
+        </section>
+        <!-- Tankers -->
+        <section class="fade-in">
+            <h2 class="section-heading"><b>Tankers</b></h2>
+            <img src="assets/tanker.jpg" alt="Tanker Image">
+            <p>Rent tankers for your liquid transportation needs.</p>
+            <button>Search Nearest Truck & Book</button>
+        </section>
+    </main>
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 GLEXOBIDS - All Rights Reserved</p>
+            <img src="assets/glexobids-logo.png" alt="GLEXOBIDS Logo" style="width: 100px; height: 100px; border-radius: 10px; margin: 10px;">
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
 </body>
 </html>
